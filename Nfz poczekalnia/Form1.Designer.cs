@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace Nfz_poczekalnia
 {
     partial class dataB
@@ -39,7 +42,8 @@ namespace Nfz_poczekalnia
             this.czasomierz1 = new System.Windows.Forms.Timer(this.components);
             this.aktualnaData = new System.Windows.Forms.Label();
             this.wybierzCzas = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            //this.czasCo10SEK = new System.Windows.Forms.Timer();
+           
             this.SuspendLayout();
             // 
             // textBox1
@@ -115,22 +119,18 @@ namespace Nfz_poczekalnia
             this.wybierzCzas.TabIndex = 7;
             this.wybierzCzas.Text = "label1";
             // 
-            // label1
+            // czasCo10SEK
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(356, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "newBadLine";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            Timer MyTimer = new Timer();
+            MyTimer.Interval = (10000);
+            MyTimer.Tick += new System.EventHandler(this.czasCo10SEK_Tick);
+            MyTimer.Start();
             // 
             // dataB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 430);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.wybierzCzas);
             this.Controls.Add(this.aktualnaData);
             this.Controls.Add(this.wybierzDate);
@@ -147,6 +147,11 @@ namespace Nfz_poczekalnia
 
         }
 
+        private EventHandler czasCo10SEK()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
@@ -158,7 +163,7 @@ namespace Nfz_poczekalnia
         public System.Windows.Forms.Timer czasomierz1;
         private System.Windows.Forms.Label aktualnaData;
         private System.Windows.Forms.Label wybierzCzas;
-        private System.Windows.Forms.Label label1;
+        //public System.Windows.Forms.Timer czasCo10SEK;
     }
 }
 

@@ -44,5 +44,11 @@ namespace Nfz_poczekalnia
         {
 
         }
+
+        private void czasCo10SEK_Tick(object sender, EventArgs e)
+        {
+            wybierzCzas.Text = DateTime.Now.ToString("HH:mm:");
+
+        }
     }   
 }
