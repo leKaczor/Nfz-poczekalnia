@@ -30,7 +30,7 @@ namespace Nfz_poczekalnia
 
         private void czasomierz1_Tick(object sender, EventArgs e)
         {
-            
+
             aktualnaData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
@@ -38,7 +38,6 @@ namespace Nfz_poczekalnia
         {
 
         }
-        //policja
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -61,9 +60,9 @@ namespace Nfz_poczekalnia
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -79,5 +78,5 @@ namespace Nfz_poczekalnia
             int u = Tabela.CurrentCell.RowIndex;
             Tabela.Rows.RemoveAt(u);
         }
-    }   
+    }
 }

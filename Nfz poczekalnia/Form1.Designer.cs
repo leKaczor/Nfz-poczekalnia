@@ -126,7 +126,7 @@ namespace Nfz_poczekalnia
             this.wybierzCzas.Click += new System.EventHandler(this.wybierzCzas_Click);
             // 
             // MyTimer
-            // 
+            //
             this.MyTimer.Enabled = true;
             this.MyTimer.Interval = 10000;
             this.MyTimer.Tick += new System.EventHandler(this.czasCo10SEK_Tick);
@@ -145,7 +145,6 @@ namespace Nfz_poczekalnia
             this.Tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Tabela.Size = new System.Drawing.Size(331, 430);
             this.Tabela.TabIndex = 8;
-            this.Tabela.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
