@@ -50,54 +50,34 @@ namespace Nfz_poczekalnia
             wybierzCzas.Text = DateTime.Now.ToString("HH:mm");
 
         }
-        class que
+
+        private void wybierzCzas_Click(object sender, EventArgs e)
         {
-            private int n;
-            private int qptr;
-            private int qcnt;
-            private string[] Q;
 
-            public que(int a)
-            {
-                n = a;
-                Q = new string[a];
-                qptr = qcnt = 0;
-            }
-            ~que()
-            {
-                GC.Collect();
-                GC.SuppressFinalize(Q);
-                GC.SuppressFinalize(this);
-            }
-            public void usun()
-            {
-                if (qcnt != 0)
-                {
-                    qcnt--;
-                    qptr++;
-                    if (qptr == n) qptr = 0;
-                }
+        }
 
-            }
-            public string front()
-            {
-                if (qcnt != 0) return Q[qptr];
-                return "";
-            }
-            public void push(string v)
-            {
-                int i;
-                if (qcnt < n)
-                {
-                    i = qptr + qcnt++;
-                    if (i >= n) i -= n;
-                    Q[i] = v;
-                }
-            }
-            public bool empty()
-            {
-                return qcnt != 0;
-            }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            int d = Tabela.Rows.Add();
+            Tabela.Rows[d].Cells[0].Value = textBoxImie.Text;
+            Tabela.Rows[d].Cells[1].Value = textBoxNazwaBadania.Text;
+            Tabela.Rows[d].Cells[2].Value = wybierzDate.Text;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int u = Tabela.CurrentCell.RowIndex;
+            Tabela.Rows.RemoveAt(u);
         }
     }   
 }
