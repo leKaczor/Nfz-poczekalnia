@@ -47,8 +47,57 @@ namespace Nfz_poczekalnia
 
         private void czasCo10SEK_Tick(object sender, EventArgs e)
         {
-            wybierzCzas.Text = DateTime.Now.ToString("HH:mm:");
+            wybierzCzas.Text = DateTime.Now.ToString("HH:mm");
 
+        }
+        class que
+        {
+            private int n;
+            private int qptr;
+            private int qcnt;
+            private string[] Q;
+
+            public que(int a)
+            {
+                n = a;
+                Q = new string[a];
+                qptr = qcnt = 0;
+            }
+            ~que()
+            {
+                GC.Collect();
+                GC.SuppressFinalize(Q);
+                GC.SuppressFinalize(this);
+            }
+            public void usun()
+            {
+                if (qcnt != 0)
+                {
+                    qcnt--;
+                    qptr++;
+                    if (qptr == n) qptr = 0;
+                }
+
+            }
+            public string front()
+            {
+                if (qcnt != 0) return Q[qptr];
+                return "";
+            }
+            public void push(string v)
+            {
+                int i;
+                if (qcnt < n)
+                {
+                    i = qptr + qcnt++;
+                    if (i >= n) i -= n;
+                    Q[i] = v;
+                }
+            }
+            public bool empty()
+            {
+                return qcnt != 0;
+            }
         }
     }   
 }
